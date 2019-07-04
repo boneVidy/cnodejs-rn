@@ -7,10 +7,10 @@ import {
     GestureResponderEvent,
     Image
 } from 'react-native';
-import React from 'react';
+import React, { memo } from 'react';
 import { ITopic } from '../models';
 
-export function TopicItem(props: { item: ListRenderItemInfo<ITopic>, onPress: (event: GestureResponderEvent) => void; }) {
+export const TopicItem =  React.memo(function TopicItem(props: { item: ListRenderItemInfo<ITopic>, onPress: (event: GestureResponderEvent) => void; }) {
     const {item, onPress} = props;
     return <TouchableHighlight onPress={onPress}>
         <View style={style.item}>
@@ -26,7 +26,7 @@ export function TopicItem(props: { item: ListRenderItemInfo<ITopic>, onPress: (e
 
         </View>
     </TouchableHighlight>;
-}
+});
 
 
 const style = StyleSheet.create({

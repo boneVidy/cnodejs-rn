@@ -8,18 +8,10 @@
 
 import React from 'react';
 import {Component} from 'react';
-import {Platform, StyleSheet, View} from 'react-native';
-import {TopicPage} from "./app/pages/topc/topc_page";
+import {StyleSheet} from 'react-native';
 import { createStackNavigator, createAppContainer } from "react-navigation"
 import TopicDetailPage from "./app/pages/topc/topic_detail_page";
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or dd shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-
+import TabPage from './app/pages/tab/tab_page';
 type Props = {};
 export default class App extends Component<Props> {
   render() {
@@ -48,8 +40,9 @@ const styles = StyleSheet.create({
 
 
 const AppContainer = createAppContainer(createStackNavigator({
-  topics: TopicPage,
+  tab: TabPage,
   topicDetail: TopicDetailPage,
 }, {
-  initialRouteName: 'topics'
+  initialRouteName: 'tab'
 })) ;
+
