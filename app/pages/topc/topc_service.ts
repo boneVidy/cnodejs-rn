@@ -1,13 +1,13 @@
 import {http} from "../../core/http";
 import queryString from 'query-string';
-import { ITopic, ITopicDetail, TTopicType } from './models';
+import { ITopic, ITopicDetail, TopicType } from './models';
 const topicApi = {
     getTopic: '/api/v1/topics',
     getTopicDetail: '/api/v1/topic/'
 };
 export interface ITopicParam {
     page:number;
-    tab: TTopicType;
+    tab: TopicType;
     limit : number;
     mdrender : boolean
 }

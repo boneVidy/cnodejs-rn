@@ -8,3 +8,17 @@ export type DateString = string;
 export interface RouteProps<T extends NavigationParams = {}> {
     navigation: NavigationScreenProp<NavigationState, T>;
 }
+
+
+
+export enum RouterEnum {
+    Tab = 'Tab',
+    User = 'User',
+    Topics = 'Topics',
+    TopicDetail = 'TopicDetail',
+}
+
+
+export interface RootScreenProps {
+    screenProps: NavigationScreenProp<any, any>;
+}

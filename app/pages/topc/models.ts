@@ -1,9 +1,11 @@
 import { DateString, HtmlString } from '../../core/types';
 
-
-
-
-export type TTopicType = 'ask' |'share' | 'job'| 'good';
+export enum TopicType {
+   ASK = 'ask',
+   SHARE = 'share',
+   JOB = 'job',
+   GOOD = 'good'
+}
 export interface ITopic {
     id: string;
     author_id: string;

@@ -12,6 +12,7 @@ import {StyleSheet} from 'react-native';
 import { createStackNavigator, createAppContainer } from "react-navigation"
 import TopicDetailPage from "./app/pages/topc/topic_detail_page";
 import TabPage from './app/pages/tab/tab_page';
+import { RouterEnum } from './app/core/types';
 type Props = {};
 export default class App extends Component<Props> {
   render() {
@@ -40,9 +41,9 @@ const styles = StyleSheet.create({
 
 
 const AppContainer = createAppContainer(createStackNavigator({
-  tab: TabPage,
-  topicDetail: TopicDetailPage,
+  [RouterEnum.Tab]: TabPage,
+  [RouterEnum.TopicDetail]: TopicDetailPage,
 }, {
-  initialRouteName: 'tab'
+  initialRouteName: RouterEnum.Tab
 })) ;
 

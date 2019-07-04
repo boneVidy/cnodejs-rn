@@ -3,22 +3,20 @@ import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
 import { TopicPage } from '../topc/topc_page';
 import UserPage from '../user/user_page';
 import { View } from 'react-native';
-import { RouteProps } from '../../core/types';
+import { RouteProps, RouterEnum } from '../../core/types';
 
 class TabPage extends Component<RouteProps> {
-
     render() {
-        // this.props.navigation
         return <View style={{flex: 1}}><BottomTab screenProps={this.props.navigation}/></View>
     }
 }
 
 
 const BottomTab = createAppContainer(createBottomTabNavigator({
-    topics: {
+    [RouterEnum.Topics]: {
         screen: TopicPage,
     },
-    user: UserPage
-}, {initialRouteName: 'topics'}));
+    [RouterEnum.User]: UserPage
+}, {initialRouteName: RouterEnum.Topics}));
 
 export default TabPage;
